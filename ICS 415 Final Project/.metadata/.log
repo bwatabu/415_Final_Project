@@ -1,0 +1,168 @@
+!SESSION 2013-09-23 10:42:20.382 -----------------------------------------------
+eclipse.buildId=4.3.0.I20130605-2000
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product C:\Users\toguchic\workspaces\RemoteSystemsTempFiles\sample.html
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.jee.product C:\Users\toguchic\workspaces\RemoteSystemsTempFiles\sample.html
+
+!ENTRY org.eclipse.equinox.app 4 2 2013-09-23 10:57:03.822
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.equinox.app".
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4397)
+	at org.eclipse.swt.SWT.error(SWT.java:4312)
+	at org.eclipse.swt.SWT.error(SWT.java:4283)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:472)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:344)
+	at org.eclipse.swt.widgets.Shell.close(Shell.java:537)
+	at org.eclipse.ui.splash.AbstractSplashHandler.dispose(AbstractSplashHandler.java:63)
+	at org.eclipse.ui.splash.BasicSplashHandler.dispose(BasicSplashHandler.java:191)
+	at org.eclipse.ui.internal.Workbench$6$1.applicationRunning(Workbench.java:753)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle$1.run(EclipseAppHandle.java:268)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.applicationRunning(EclipseAppHandle.java:258)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1056)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:138)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:610)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
+
+!ENTRY org.eclipse.egit.ui 2 0 2013-09-23 10:57:12.731
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\toguchic'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2013-10-07 09:24:16.325 -----------------------------------------------
+eclipse.buildId=4.3.0.I20130605-2000
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product X:\xampp\htdocs\hw\clients.php
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.jee.product X:\xampp\htdocs\hw\clients.php
+
+!ENTRY org.eclipse.egit.ui 2 0 2013-10-07 09:37:20.871
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\toguchic'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.core.resources 4 2 2013-10-07 13:53:51.676
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.LinkageError: Error reading class bytes: org.eclipse.jdt.internal.core.index.JarIndexLocation
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findClassImpl(ClasspathManager.java:558)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClassImpl(ClasspathManager.java:492)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:465)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:464)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.deleteIndexFiles(IndexManager.java:203)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.cleanUpIndexes(IndexManager.java:143)
+	at org.eclipse.jdt.internal.core.JavaModelManager.saving(JavaModelManager.java:4267)
+	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:383)
+	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:192)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:195)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1130)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2376)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Caused by: java.util.zip.ZipException: ZIP_Read: error reading zip file
+	at java.util.zip.ZipFile.read(Native Method)
+	at java.util.zip.ZipFile.access$1400(Unknown Source)
+	at java.util.zip.ZipFile$ZipFileInputStream.read(Unknown Source)
+	at java.util.zip.ZipFile$ZipFileInflaterInputStream.fill(Unknown Source)
+	at java.util.zip.InflaterInputStream.read(Unknown Source)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleEntry$ZipBundleEntryInputStream.read(ZipBundleEntry.java:157)
+	at org.eclipse.osgi.internal.baseadaptor.AdaptorUtil.getBytes(AdaptorUtil.java:247)
+	at org.eclipse.osgi.baseadaptor.bundlefile.BundleEntry.getBytes(BundleEntry.java:96)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findClassImpl(ClasspathManager.java:554)
+	... 20 more
+
+!ENTRY org.eclipse.core.resources 4 2 2013-10-07 13:53:51.778
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NoClassDefFoundError: org/eclipse/dltk/core/search/SearchMatch
+	at org.eclipse.dltk.internal.core.search.IndexSelector.initializeIndexLocations(IndexSelector.java:143)
+	at org.eclipse.dltk.internal.core.search.IndexSelector.getIndexLocations(IndexSelector.java:310)
+	at org.eclipse.dltk.core.search.DLTKSearchParticipant.selectIndexes(DLTKSearchParticipant.java:188)
+	at org.eclipse.dltk.internal.core.search.PatternSearchJob.getIndexes(PatternSearchJob.java:95)
+	at org.eclipse.dltk.core.search.indexing.IndexManager.cleanUpIndexes(IndexManager.java:110)
+	at org.eclipse.dltk.internal.core.ModelManager.saving(ModelManager.java:2457)
+	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:383)
+	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:192)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:195)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1130)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2376)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.dltk.core.search.SearchMatch cannot be found by org.eclipse.dltk.core_5.0.0.201306060709
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 14 more
+
+!ENTRY org.eclipse.core.resources.win32.x86 4 0 2013-10-07 13:53:51.845
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+java.io.IOException: Exception in opening zip file: X:\eclipse\plugins\org.eclipse.core.resources.win32.x86_3.5.100.v20100505-1741.jar
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:329)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:87)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:100)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:73)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:245)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findClassImpl(ClasspathManager.java:548)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClassImpl(ClasspathManager.java:501)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:465)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:464)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.core.internal.resources.ProjectDescription.getBuildConfigs(ProjectDescription.java:250)
+	at org.eclipse.core.internal.resources.Project.internalGetBuildConfigs(Project.java:812)
+	at org.eclipse.core.internal.resources.Project.getBuildConfig(Project.java:387)
+	at org.eclipse.core.internal.resources.Project.internalGetActiveBuildConfig(Project.java:798)
+	at org.eclipse.core.internal.resources.Project.getActiveBuildConfig(Project.java:376)
+	at org.eclipse.core.internal.resources.SaveManager.getTreesToSave(SaveManager.java:1857)
+	at org.eclipse.core.internal.resources.SaveManager.writeTree(SaveManager.java:1938)
+	at org.eclipse.core.internal.resources.SaveManager.saveTree(SaveManager.java:1355)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1134)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2376)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Caused by: java.io.FileNotFoundException: X:\eclipse\plugins\org.eclipse.core.resources.win32.x86_3.5.100.v20100505-1741.jar (The system cannot find the path specified)
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:312)
+	... 26 more

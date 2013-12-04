@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	
+    <!-- <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">-->
+
+    <title>Everything Socks!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="bootstrap/justified-nav.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    
+ 
+  </head>
+
+  <body>
+
+    <div class="container">
+		
+       <div class="masthead">
+        <h2 class="text-muted"><img src="hp2.jpg"class="img-circle"> Everything Socks!</h2>
+	  <?php
+		if (isset($_COOKIE["name"])){
+	  ?>
+	  <p class="text-right">Hello 
+	  	<?php print $_COOKIE["name"]
+	  	?>!
+	  </p>
+	  <p class="text-right"> <a href="account.html"><span class="glyphicon glyphicon-cog"></span>Account Settings </a> &#124; <a href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart </a> &#124;<a href="logout.php"> <span class="glyphicon glyphicon-log-out"></span> Logout</a>
+	  <?php
+	    }else{
+        ?>
+        <p class="text-right">Welcome Guest!</p> 
+	   <p class="text-right"><a href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart </a> &#124;<a href="login.html"> <span class="glyphicon glyphicon-log-in"></span> Login</a> &#124; <a href="sign_up.html"> <span class="glyphicon glyphicon-user"></span> Sign Up</a></p> 
+		<?php } ?>
+		
+
+        
+        <ul class="nav nav-justified">
+          <li><a href="final.html">New Arrival</a></li>
+          <li><a href="womens.html">Women's</a></li>
+          <li><a href="mens.html">Men's</a></li>
+          <li><a href="kids.html">Kids</a></li>
+          <li><a href="#">SALE</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+      </div>
+
+<?php
+    $mysqli = new mysqli("localhost","root","","socks");
+    
+    if($mysqli -> connect_errno){
+
+	echo "FAILURE:(".$mysqli->connect_errno.")".$my->connect_error; 
+    }
+	$getItem = "SELECT * FROM cart";
+	$results = mysqli_query($mysqli,$getItem);
+
+	if(!$results){
+		echo 'Could not run query: ' . mysql_error();
+		exit();	
+	}
+	
+	?>
+	
+	<form class="form-horizontal" id="deleteCart" name="deleteCart" method="post" action="removefromcart.php">
+	<div class="row">
+	<div class="col-md-3 col-md-offset-1">
+	<h2 class="text-muted">Item</h2>
+	</div>
+
+	<div class="col-md-3 col-md-offset-2">
+	<h2 class="text-muted">Price</h4>
+	</div>
+	</div>
+		
+
+	<?php
+	$count = 1;
+	while($row = mysqli_fetch_array($results, MYSQL_ASSOC)){
+		?>
+		
+		<div class="row">
+		<div class="col-md-3 col-md-offset-1">
+		<h4>
+		<?php
+		echo "<input type=\"checkbox\" class=\"form\" value=\"$count\" name=\"checkbox[]\">  " ;
+		
+		 $count+=1; echo $row['item_name'] . " "; 					?>
+		</h4>
+		</div>
+		
+		<div class="col-md-3 col-md-offset-2">
+		<h4>
+		<?php echo $row['price'] . " "; ?> 
+		</h4>
+		</div>
+	
+		 </div>
+		<?php
+		
+	}
+	$sum = "SELECT SUM(price) AS total FROM cart";
+	$theSum = mysqli_query($mysqli,$sum);
+	if(!$theSum){
+		echo 'Could not run query: ' . mysql_error();
+		exit();	
+	}
+	$total = mysqli_fetch_array($theSum, MYSQL_ASSOC);
+	?>
+	<div class="row mycontent-top">
+	<div class="col-md-3 col-md-offset-1">
+		<h3>
+		<?php echo "TOTAL"; ?>
+		</h3>
+		</div>
+	<div class="col-md-3 col-md-offset-2">
+	<h4 style="color:red">
+	<?php echo "$" . $total['total'];?>
+	</h4>
+	</div>
+	</div>
+
+	<div class="row">
+	<div class="col-sm-1">
+	 <button type="submit" class="btn btn-default" name="sub" id="sub"> <h5><strong>Remove From Cart</strong></h5></button> 
+	</form>
+	</div>
+
+	<div class="col-sm-1 col-sm-offset-1">
+<form class="form-horizontal" id="deleteAll" name="deleteAll" method="post" action="removeall.php">
+	<button type="submit" class="btn btn-default" name="sub2" id="sub2"> <h5><strong>Remove All Items</strong></h5></button>
+	</form>
+    </div>
+	<div class="col-sm col-sm-offset-9">
+	<button type="" class="btn btn-default btn-info" name="sub2" id="sub2"> <h5><strong>Checkout</strong></h5></button>
+	</div>
+	</div>
+	
+      <!-- Site footer -->
+      
+
+  <div class="container">
+    
+      <div class="footer">
+      	<div class = "col-md-3">
+      		<h5>Questions?</h5>
+      		 <a href="#">Help</a></br>
+      		 <a href="#">Track Order</a></br>
+      		 <a href="#">Shipping</a>
+      	</div>
+      	<div class = "col-md-3">
+      		<h5>More About Us</h5>
+      		<a href="#">Who we are</a></br>
+      		<a href="#">Stuff</a></br>
+      		<a href="#">Why socks?</a>
+      	</div>
+      	<div class = "col-md-3">
+      		<h5>Fun with Socks</h5>
+      		<a href="#">Facts about socks</a></br>
+      		<a href="#">Socks!</a></br>
+      		<a href="#">More sites with socks</a>
+      	</div>
+      	<div class = "col-md-3">
+        <h5>Follow Us</h5>
+        <a href="facebook.com" target="_blank" align="left"><img src="http://www.niftybuttons.com/round/facebook.png"></a><a href="twitter.com" target="_blank" align="left"><img src="http://www.niftybuttons.com/round/twitter.png"></a><a href="myspace.com" target="_blank" align="left"><img src="http://www.niftybuttons.com/round/myspace.png"></a>
+        <p>&copy; Everything Socks! 2013</p>
+        </div>
+      </div>
+
+  </div>  
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+      <script type="text/javascipt" src="valforms.js"></script>
+ <script type="text/javascipt" src="/bootstrap/js/bootstrap.js"></script>
+    <!-- Placed at the end of the document so the pages load faster -->
+
+  </body>
+
+
+	
+</html>

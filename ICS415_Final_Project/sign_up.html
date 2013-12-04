@@ -1,0 +1,173 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+ 
+    <!-- <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">-->
+
+    <title>Everything Socks!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+	 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="bootstrap/justified-nav.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    
+ 
+  </head>
+
+  <body>
+  
+    <div class="container">
+
+      <div class="masthead">
+        <h2 class="text-muted"><img src="hp2.jpg"class="img-circle"> Everything Socks!</h2>
+
+         <?php
+		if (isset($_COOKIE["name"])){
+	  ?>
+	  <p class="text-right">Hello 
+	  	<?php print $_COOKIE["name"]
+	  	?>!
+	  </p>
+	  <p class="text-right"> <a href="account.html"><span class="glyphicon glyphicon-cog"></span>Account Settings </a> &#124; <a href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart </a> &#124;<a href="logout.php"> <span class="glyphicon glyphicon-log-out"></span> Logout</a>
+	  
+	  <?php
+	    }else{
+        ?>
+        <p class="text-right">Welcome Guest!</p> 
+	   <p class="text-right"><a href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart </a> &#124;<a href="login.html"> <span class="glyphicon glyphicon-log-in"></span> Login</a> &#124; <a href="sign_up.html"> <span class="glyphicon glyphicon-user"></span> Sign Up</a></p> 
+		<?php } ?>
+
+        <ul class="nav nav-justified">
+          <li><a href="final.html">New Arrival</a></li>
+          <li><a href="womens.html">Women's</a></li>
+          <li><a href="mens.html">Men's</a></li>
+          <li><a href="kids.html">Kids</a></li>
+          <li><a href="#">SALE</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+      </div>
+ 
+ <?php
+ session_start();
+ if(isset($_SESSION['fromForm']) && $_SESSION['fromForm']){
+ 	?>
+      <p style="color:red" align="center">Email already exists.</p>
+	<?php
+	unset($_SESSION['fromForm']);
+ }
+ 
+ ?>
+ <div class="col-md-5 col-md-offset-4">
+  <center><h3>Sign Up</h3></center>
+ </br>
+
+<form class="form-horizontal" id="forms" action = "form.php" method="post">
+  <div class="form-group">
+  
+    <label for="fname" class="col-sm-3 control-label">First Name <font color="red">*</font></label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="fname" name="firstname" placeholder="First name" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="lname" class="col-sm-3 control-label">Last Name <font color="red">*</font></label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="fname" name="lastname" placeholder="Last name" required>
+    </div>
+  </div>
+  <div class="form-group">
+  
+    <label for="email" class="col-sm-3 control-label">Email <font color="red">*</font></label>
+    <div class="col-sm-9">
+      <input type="email" class="form-control" id="Email" name= "email" placeholder="Email" required>
+    </div>
+  </div>
+  <div class="form-group">
+  
+    <label for="pw" class="col-sm-3 control-label">Password <font color="red">*</font></label>
+    <div class="col-sm-9">
+      <input type="password" pattern=".{6,}" class="form-control" id="Password" name ="password" placeholder="Password must be 6 or more characters" required>
+    </div>
+  </div>
+  
+  <div class="form-group">
+   <label for="bday" class="col-sm-3 control-label">Date of Birth <font color="red">*</font></label>
+
+   <div class="col-sm-6">
+    <input type="date" class="form-control" id="dob"  name="dob" placeholder="DOB" required>
+   </div>
+ </div>
+<div class="col-sm-13">
+ <div class="form-group">
+  <input type="checkbox" id="terms" name="terms" required> Agree to <a href="#"> Terms & Conditions</a>. Your soul is ours.<font color="red">*</font>
+
+ </div>
+  <div class="form-group">
+    
+      <button type="submit" class="btn btn-default" >Submit</button>
+      
+    </div>
+  </div>
+</form>
+
+</div>
+
+</div> <!-- container -->
+
+<div class="container">
+      <!-- Site footer -->
+      
+      <div class="footer">
+      	<div class = "col-md-3">
+      		<h5>Questions?</h5>
+      		 <a href="#">Help</a></br>
+      		 <a href="#">Track Order</a></br>
+      		 <a href="#">Shipping</a>
+      	</div>
+      	<div class = "col-md-3">
+      		<h5>More About Us</h5>
+      		<a href="#">Who we are</a></br>
+      		<a href="#">Stuff</a></br>
+      		<a href="#">Why socks?</a>
+      	</div>
+      	<div class = "col-md-3">
+      		<h5>Fun with Socks</h5>
+      		<a href="#">Facts about socks</a></br>
+      		<a href="#">Socks!</a></br>
+      		<a href="#">More sites with socks</a>
+      	</div>
+      	<div class = "col-md-3">
+        <h5>Follow Us</h5>
+        <a href="facebook.com" target="_blank" align="left"><img src="http://www.niftybuttons.com/round/facebook.png"></a><a href="twitter.com" target="_blank" align="left"><img src="http://www.niftybuttons.com/round/twitter.png"></a><a href="myspace.com" target="_blank" align="left"><img src="http://www.niftybuttons.com/round/myspace.png"></a>
+        <p>&copy; Everything Socks! 2013</p>
+        </div>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  
+  <script type="text/javascipt" src="valforms.js">
+</script>
+ <script type="text/javascipt" src="bootstrap/js/bootstrap.js">
+</script>
+ <script type="text/javascipt" src="bootstrap/js/bootstrap.min.js">
+</script>
+  </body>
+</html>

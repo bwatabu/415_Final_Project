@@ -89,7 +89,14 @@ function added(){
           <li><a href="aboutus.html">About Us</a></li>
         </ul>
       </div>
-
+	<?php 
+		session_start();
+		if(isset($_SESSION['incart']) && $_SESSION['incart']){
+		?> <p style="color:red" class="h4 text-center">Item(s) added to cart.</p>
+		<?php
+			unset($_SESSION['incart']);
+		}?>
+		
       <!-- Jumbotron -->
       
       <div class="jumbotron">
@@ -101,13 +108,6 @@ function added(){
         <p><a class="btn btn-lg btn-success" href="#" role="button"><span class="glyphicon glyphicon-hand-right"></span> SHOP NOW</a></p>
       </div>
 	
-		<?php 
-		session_start();
-		if(isset($_SESSION['incart']) && $_SESSION['incart']){
-		?> <p style="color:red" class="h4 text-center">Item(s) added to cart.</p>
-		<?php
-			unset($_SESSION['incart']);
-		}?>
 		
       <!-- Example row of columns -->
       <div class="row">

@@ -58,6 +58,14 @@
           <li><a href="aboutus.html">About Us</a></li>
         </ul>
       </div>
+		
+	<?php 
+		session_start();
+		if(isset($_SESSION['incart']) && $_SESSION['incart']){
+		?> <p style="color:red" class="h4 text-center">Item(s) added to cart.</p>
+		<?php
+			unset($_SESSION['incart']);
+		}?>
 
       <!-- Jumbotron -->
       

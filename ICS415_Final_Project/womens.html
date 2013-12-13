@@ -61,7 +61,13 @@
       </div>
 
       <!-- Jumbotron -->
-      
+      <?php 
+		session_start();
+		if(isset($_SESSION['incart']) && $_SESSION['incart']){
+		?> <p style="color:red" class="h4 text-center">Item(s) added to cart.</p>
+		<?php
+			unset($_SESSION['incart']);
+		}?>
       <div class="jumbotron">
         <span class="text-warning"><p  class="h1">Women's Sock</p> </span>
         <img src="socks/womens.jpg" alt="..." class="img-rounded">
@@ -69,6 +75,9 @@
        
         
       </div>
+
+	
+
 
       <!-- Example row of columns -->
       <div class="row">
